@@ -1,24 +1,60 @@
----
-title       : Earned Run Average (E.R.A.) Presentation
-subtitle    : Developing Data Products Course Project
-author      : Charles Westby
-job         : Upcoming Data Analyst
-framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
-highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
-widgets     : [mathjax, shiny, interactive]            # {mathjax, quiz, bootstrap}
-mode        : selfcontained # {standalone, draft}
-knit        : slidify::knit2slides
----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Earned Run Average (E.R.A.) Presentation</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Earned Run Average (E.R.A.) Presentation">
+  <meta name="author" content="Charles Westby">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/interactive/css/aceeditor.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
 
-## What is an Earned Run Average (E.R.A.)?
-
-An E.R.A. is a statistic that is fundamental in the game of baseball. It is a calculation that tells how many Earned Runs a pitcher gives up on average per baseball game or 9 innings pitched.  
   
-<!--html_preserve--><div class="container-fluid">
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Earned Run Average (E.R.A.) Presentation</h1>
+    <h2>Developing Data Products Course Project</h2>
+    <p>Charles Westby<br/>Upcoming Data Analyst</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>What is an Earned Run Average (E.R.A.)?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>An E.R.A. is a statistic that is fundamental in the game of baseball. It is a calculation that tells how many Earned Runs a pitcher gives up on average per baseball game or 9 innings pitched.  </p>
+
+<p>&lt;!--html_preserve--&gt;<div class="container-fluid"></p>
+
 <div class="row">
 <h2>Earned Run Average (E.R.A.)</h2>
 </div>
+
 <div class="row">
 <div class="col-sm-4">
 <form class="well">
@@ -26,15 +62,19 @@ An E.R.A. is a statistic that is fundamental in the game of baseball. It is a ca
 <label for="number1">Earned Runs Allowed</label>
 <input id="number1" type="number" class="form-control" value="0" min="0"/>
 </div>
+
 <div class="form-group shiny-input-container">
 <label for="number2">Innings Pitched</label>
 <input id="number2" type="number" class="form-control" value="0" min="0"/>
 </div>
+
 <div>
 <button type="submit" class="btn btn-primary">Calculate</button>
 </div>
-</form>
-</div>
+
+<p></form>
+</div></p>
+
 <div class="col-sm-8">
 <p>Earned Runs Allowed</p>
 <div id="number1" class="shiny-text-output"></div>
@@ -43,64 +83,134 @@ An E.R.A. is a statistic that is fundamental in the game of baseball. It is a ca
 <p>Earned Run Average (E.R.A)</p>
 <div id="text3" class="shiny-text-output"></div>
 </div>
-</div>
-</div><!--/html_preserve-->
-  
 
+<p></div>
+</div>&lt;!--/html_preserve--&gt;</p>
 
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>What you need to calculate an Earned Run Average (E.R.A.)?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>\[Earned.Run.Average=\frac{Earned.Runs}{Innings.Pitched}* 9\]  </p>
 
---- 
+<ul>
+<li><p>Earned Runs - An Earned Run is a Run that is given up when an Error in the field is not committed. If an Error in the field is committed, the Run is scored an Uneared Run. When in question, an Earned Run is decided by the Official Scorer of the game. </p></li>
+<li><p>Innings Pitched - Innings pitched is how many in innings a pitcher has thrown up until that point or for the entire season. Each inning is measured by three outs. Therefore, if a pitcher has made it through 7 innings and has recorded one out, he has thrown 7.1 innings. If he has recorded two outs, he has thrown 7.2 innings.  </p></li>
+<li><p>The answer is then multiplied by 9 because there are 9 innings in a standard regulation baseball game. If the amount of innings per game is different in your league, then that number should be substituted for 9. </p></li>
+</ul>
 
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-## What you need to calculate an Earned Run Average (E.R.A.)?
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Calculate the Earned Run Average (E.R.A)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>If you click the link, you will be sent to a page where you can calculate E.R.A.&#39;s</p>
 
-$$Earned.Run.Average=\frac{Earned.Runs}{Innings.Pitched}* 9$$  
+<p><a href="http://cwestby.shinyapps.io/Shiny_App/">http://cwestby.shinyapps.io/Shiny_App/</a>  </p>
 
-* Earned Runs - An Earned Run is a Run that is given up when an Error in the field is not committed. If an Error in the field is committed, the Run is scored an Uneared Run. When in question, an Earned Run is decided by the Official Scorer of the game. 
+<p>R performs for following calculation </p>
 
-* Innings Pitched - Innings pitched is how many in innings a pitcher has thrown up until that point or for the entire season. Each inning is measured by three outs. Therefore, if a pitcher has made it through 7 innings and has recorded one out, he has thrown 7.1 innings. If he has recorded two outs, he has thrown 7.2 innings.  
-
-* The answer is then multiplied by 9 because there are 9 innings in a standard regulation baseball game. If the amount of innings per game is different in your league, then that number should be substituted for 9. 
-
-
-
----
-
-
-## Calculate the Earned Run Average (E.R.A)
-
-If you click the link, you will be sent to a page where you can calculate E.R.A.'s
-
-http://cwestby.shinyapps.io/Shiny_App/  
-  
-R performs for following calculation 
-
-```r
-output$text3 <- renderText({
+<pre><code class="r">output$text3 &lt;- renderText({
     round(input$earned_runs/input$innings_pitched * 9, digits = 2)
 })
-```
+</code></pre>
 
+<h3>You know the Earned Run Average (E.R.A.). Now what?</h3>
 
-### You know the Earned Run Average (E.R.A.). Now what? 
+<p>Once you calculate an E.R.A., there are several things you can do with the statistic. Along with other statistics, an E.R.A. can help compare pitchers to one another. Pitchers are often broken up into different classes. The most basis classes are Starting Pitchers and Relief Pitchers. Starting Pitchers are usually compared with other Starting Pitchers. The same goes for Relief Pitchers. This app helps facilitate the process.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Why calculate an Earned Run Average (E.R.A.)?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>In the era of sabermetrics and baseball analytics, the E.R.A. is stil a valuable stat.  </p></li>
+<li><p>Much of the focus is now on pitches thrown per inning, which is good for determining a pitcher&#39;s efficiency. </p></li>
+<li><p>Another critical stat that is new to the public is a pitcher&#39;s WHIP, or Walks and Hits per inning pitched. This stat shows how often a pitcher allows hitters on base. Pitchers with high WHIP&#39;s tend to have high E.R.A.&#39;s.  </p></li>
+<li><p>However, an E.R.A. is still valuable because it shows how many runs a pitcher tends to give up when he pitches. In the end, wins and losses are measured in runs.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='What is an Earned Run Average (E.R.A.)?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='What you need to calculate an Earned Run Average (E.R.A.)?'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Calculate the Earned Run Average (E.R.A)'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Why calculate an Earned Run Average (E.R.A.)?'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/interactive/js/ace/js/ace.js"></script>
+<script src="libraries/widgets/interactive/js/opencpu-0.5.js"></script>
+<script src="libraries/widgets/interactive/js/interactive.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<script src="shared/shiny.js" type="text/javascript"></script>
+  <script src="shared/slider/js/jquery.slider.min.js"></script>
+  <script src="shared/bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="shared/slider/css/jquery.slider.min.css"></link>
   
-Once you calculate an E.R.A., there are several things you can do with the statistic. Along with other statistics, an E.R.A. can help compare pitchers to one another. Pitchers are often broken up into different classes. The most basis classes are Starting Pitchers and Relief Pitchers. Starting Pitchers are usually compared with other Starting Pitchers. The same goes for Relief Pitchers. This app helps facilitate the process.
-
----
-
-
-## Why calculate an Earned Run Average (E.R.A.)?
-
-* In the era of sabermetrics and baseball analytics, the E.R.A. is stil a valuable stat.  
-
-* Much of the focus is now on pitches thrown per inning, which is good for determining a pitcher's efficiency. 
-
-* Another critical stat that is new to the public is a pitcher's WHIP, or Walks and Hits per inning pitched. This stat shows how often a pitcher allows hitters on base. Pitchers with high WHIP's tend to have high E.R.A.'s.  
-
-* However, an E.R.A. is still valuable because it shows how many runs a pitcher tends to give up when he pitches. In the end, wins and losses are measured in runs.
-
-
-
-
-
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
